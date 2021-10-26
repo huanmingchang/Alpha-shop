@@ -2,6 +2,7 @@ import './scss/main.scss'
 
 const hamburger = document.querySelector('.hamburger')
 
+// TODO  visibility 切換問題
 function hamburgerOnClick(e) {
   const navWrapper = document.querySelector('.nav-wrapper')
   if (!e.target.classList.contains('hamburger')) {

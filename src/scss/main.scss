@@ -72,9 +72,8 @@ nav {
   }
 }
 
-
 footer {
-  
+  display: none;
 }
 
 @media (min-width: 376px) {
@@ -117,6 +116,57 @@ footer {
     .nav__logo {
       width: 169.83px;
       height: 30px;
+    }
+  }
+
+  footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 284px;
+    background: $footer;
+    .footer-info-wrapper {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      .footer-logo {
+        width: 175.49px;
+        height: 31px;
+      }
+      .footer-info {
+        height: 100%;
+        &__title {
+          padding: 4rem 0 1.5rem;
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+        &__content--item {
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5rem;
+          color: $footer-grey;
+        }
+        &__icons-wrapper {
+          @include flex(row, start, center);
+          padding-top: 10px;
+          width: 104px;
+          height: 24px;
+          &--fb {
+            width: 9.33px;
+            height: 20px;
+            margin-right: 27.47px;
+          }
+          &--ig {
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+          }
+          &--whatsapp {
+            width: 20px;
+            height: 20.1px;
+          }
+        }
+      }
     }
   }
 }
