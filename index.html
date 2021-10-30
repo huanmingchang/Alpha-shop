@@ -49,7 +49,7 @@
       </div>
     </nav>
 
-    <main id="main">
+    <main id="main" class="main">
       <div class="main__title">結帳</div>
       <div class="main__stepper-panel">
         <div
@@ -92,7 +92,156 @@
           </div>
         </div>
       </div>
-      <div class="main__form-panel"></div>
+      <div class="main__form-panel">
+        <div class="main__form-panel__container">
+          <form id="a-form">
+            <div class="form-part">
+              <div class="form-title">寄送地址</div>
+              <div class="forms stage-1">
+                <div class="form-row title">
+                  <label for="">稱謂</label>
+                  <div class="select-wrapper">
+                    <select name="gender" id="gender" required>
+                      <option value="male" selected>先生</option>
+                      <option value="female">小姐</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row name">
+                  <label for="">姓名</label>
+                  <input
+                    id="customer-name"
+                    type="text"
+                    placeholder="請輸入姓名"
+                  />
+                </div>
+                <div class="form-row phone">
+                  <label for="">電話</label>
+                  <input
+                    id="customer-phone"
+                    type="text"
+                    placeholder="請輸入行動電話"
+                  />
+                </div>
+                <div class="form-row email">
+                  <label for="">Email</label>
+                  <input
+                    id="customer-email"
+                    type="text"
+                    placeholder="請輸入電子郵件"
+                  />
+                </div>
+                <div class="form-row city">
+                  <label for="">縣市</label>
+                  <div class="select-wrapper">
+                    <select name="city" id="city" required>
+                      <option value="" disabled selected>請選擇縣市</option>
+                      <option value="">台北市</option>
+                      <option value="">新北市</option>
+                      <option value="">桃園市</option>
+                      <option value="">台中市</option>
+                      <option value="">台南市</option>
+                      <option value="">高雄市</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row address">
+                  <label for="">地址</label>
+                  <input
+                    id="customer-address"
+                    type="text"
+                    placeholder="請輸入地址"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-part">
+              <div class="form-title">運送方式</div>
+              <div class="forms stage-2">
+                <div class="radio-wrapper d-flex align-items-center mb-6">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    value="general"
+                    class="delivery my-5 mx-5"
+                  />
+                  <div class="delivery-content d-flex flex-column">
+                    <div
+                      class="
+                        delivery-content__details
+                        d-flex
+                        justify-content-between
+                      "
+                    >
+                      <div class="delivery-content__details--option">
+                        標準運送
+                      </div>
+                      <div class="delivery-content__details--freight">免費</div>
+                    </div>
+                    <div class="delivery-content__time">約 3~7 個工作天</div>
+                  </div>
+                </div>
+                <div class="radio-wrapper d-flex align-items-center">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    value="dhl"
+                    class="delivery my-5 mx-5"
+                  />
+                  <div class="delivery-content d-flex flex-column">
+                    <div
+                      class="
+                        delivery-content__details
+                        d-flex
+                        justify-content-between
+                      "
+                    >
+                      <div class="delivery-content__details--option-dhl">
+                        DHL 貨運
+                      </div>
+                      <div class="delivery-content__details--freight">$500</div>
+                    </div>
+                    <div class="delivery-content__time">48 小時內送達</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-part">
+              <div class="form-title">付款方式</div>
+              <div class="forms stage-3">
+                <div class="form-row cardname">
+                  <label for="">持卡人姓名</label>
+                  <input
+                    id="creditcard-name"
+                    type="text"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="form-row cardnumber">
+                  <label for="">卡號</label>
+                  <input
+                    id="creditcard-number"
+                    type="text"
+                    placeholder="1111 2222 3333 4444"
+                  />
+                </div>
+                <div class="form-row validity">
+                  <label for="">有效期限</label>
+                  <input
+                    id="creditcard-validity"
+                    type="text"
+                    placeholder="ＭＭ/YY"
+                  />
+                </div>
+                <div class="form-row cvc">
+                  <label for="">CVC/CCV</label>
+                  <input id="creditcard-cvc" type="text" placeholder="123" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
       <div class="main__cart-container"></div>
       <div class="main__button-panel"></div>
     </main>

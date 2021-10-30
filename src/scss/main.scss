@@ -11,10 +11,9 @@
 
 %input-common-style {
   height: 40px;
+  width: 100%;
   border-radius: 4px;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.125rem;
+  padding: 0.75rem 0 0.75rem 1rem;
   font-size: 0.75rem;
   color: $font-color;
   border: 1px solid $input-border-grey;
@@ -99,6 +98,10 @@ nav {
   }
 }
 
+.main {
+  margin: 0 15px;
+}
+
 .main__title {
   margin: 1rem 0 1.5rem;
   font-size: 1.5rem;
@@ -172,6 +175,105 @@ nav {
         font-weight: 400;
         color: $neutrals-grey;
       }
+    }
+  }
+}
+
+.form-part {
+  width: 100%;
+  .form-title {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+  .forms {
+    .form-row {
+      @include flex(column, start, start);
+      width: 100%;
+      label {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: $footer-grey;
+        padding: 1.5rem 0 0.5rem 0;
+      }
+      input {
+        @extend %input-common-style;
+      }
+      .select-wrapper {
+        position: relative;
+        width: 100%;
+        z-index: 0;
+        &::after {
+          content: '\25BE';
+          @extend %position-center;
+          right: 8px;
+          z-index: -1;
+          color: $font-color;
+        }
+        select {
+          @extend %input-common-style;
+          -webkit-appearance: none;
+          background: transparent;
+          cursor: pointer;
+          &:invalid {
+            color: $placeholder-grey;
+          }
+        }
+      }
+    }
+  }
+  .forms.stage-1 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    column-gap: 30px;
+    grid-template-areas:
+      'title title name name name'
+      'phone phone phone phone phone'
+      'email email email email email'
+      'city city city city city'
+      'address address address address address';
+    .title {
+      grid-area: title;
+    }
+    .name {
+      grid-area: name;
+    }
+    .phone {
+      grid-area: phone;
+    }
+    .email {
+      grid-area: email;
+    }
+    .city {
+      grid-area: city;
+    }
+    .address {
+      grid-area: address;
+    }
+  }
+  .forms.stage-3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 30px;
+    grid-template-areas:
+      'cardname cardname cardname cardname'
+      'cardnumber cardnumber cardnumber cardnumber'
+      'validity validity cvc cvc';
+    .cardname {
+      grid-area: cardname;
+    }
+    .cardnumber {
+      grid-area: cardnumber;
+    }
+    .validity {
+      grid-area: validity;
+      margin-right: 30px;
+    }
+    .cvc {
+      grid-area: cvc;
     }
   }
 }
