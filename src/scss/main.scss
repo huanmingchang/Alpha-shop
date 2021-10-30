@@ -9,11 +9,38 @@
   transform: translateY(-50%);
 }
 
+%input-common-style {
+  height: 40px;
+  border-radius: 4px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.125rem;
+  font-size: 0.75rem;
+  color: $font-color;
+  border: 1px solid $input-border-grey;
+  &:placeholder {
+    color: $placeholder-grey;
+  }
+  &:hover,
+  &:focus {
+    border-color: $neutrals-grey;
+  }
+}
+
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i})
+      .main__stepper-panel__container__step--circle-container::after {
+      content: '#{$i}';
+    }
+  }
 }
 
 nav {
@@ -72,6 +99,83 @@ nav {
   }
 }
 
+.main__title {
+  margin: 1rem 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.main__stepper-panel {
+  width: 100%;
+  height: 32px;
+  &__container {
+    width: 100%;
+    height: 100%;
+    &__step {
+      position: relative;
+      @include flex(row, start, center);
+      @include getStepNums(3);
+      &.initial,
+      &.checked,
+      &.active {
+        .main__stepper-panel__container__step--connect-line {
+          background: $neutrals-black;
+        }
+
+        .main__stepper-panel__container__step--label-container {
+          color: $font-color;
+        }
+      }
+      &.initial,
+      &.checked {
+        .main__stepper-panel__container__step--circle-container {
+          background: $black;
+          border-color: $black;
+          color: $white;
+        }
+      }
+      &.active {
+        .main__stepper-panel__container__step--circle-container {
+          background: transparent;
+          border-color: $font-color;
+          color: $font-color;
+        }
+      }
+      &.checked {
+        .main__stepper-panel__container__step--circle-container::after {
+          content: '\2714';
+        }
+      }
+
+      &--circle-container {
+        @include flex(row, center, center);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: transparent;
+        color: $neutrals-grey;
+        border: 1px solid $neutrals-grey;
+      }
+      &--connect-line {
+        display: block;
+        @extend %position-center;
+        left: 50%;
+        width: 60px;
+        height: 2px;
+        max-width: 60px;
+        background: $pale-grey;
+      }
+      &--label-container {
+        display: none;
+        line-height: 1.5rem;
+        font-weight: 400;
+        color: $neutrals-grey;
+      }
+    }
+  }
+}
+
 footer {
   display: none;
 }
@@ -119,9 +223,17 @@ footer {
     }
   }
 
+  .main__title {
+    margin: 5rem 0 3rem;
+    font-size: 2rem;
+  }
+
+  .main__step-panel {
+    height: 24px;
+  }
+
   footer {
     display: flex;
-    position: relative;
     width: 100%;
     height: 284px;
     background: $footer;
