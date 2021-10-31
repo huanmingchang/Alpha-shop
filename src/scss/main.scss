@@ -419,14 +419,38 @@ footer {
       height: 30px;
     }
   }
-
+  .main {
+    margin: 0 165px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title'
+      'stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel . cart cart cart cart cart'
+      'form-panel form-panel form-panel form-panel form-panel form-panel . cart cart cart cart cart'
+      'button-panel button-panel button-panel button-panel button-panel button-panel . cart cart cart cart cart';
+  }
   .main__title {
+    grid-area: main-title;
     margin: 5rem 0 3rem;
     font-size: 2rem;
   }
 
   .main__step-panel {
+    grid-area: stepper-panel;
     height: 24px;
+  }
+
+  .main__form-panel {
+    grid-area: form-panel;
+  }
+
+  .main__cart {
+    grid-area: cart;
+  }
+
+  .main__button-panel {
+    grid-area: button-panel;
   }
 
   .form-part {
@@ -488,6 +512,7 @@ footer {
     display: flex;
     width: 100%;
     height: 284px;
+    margin-top: 124px;
     background: $footer;
     .footer-info-wrapper {
       width: 80%;
