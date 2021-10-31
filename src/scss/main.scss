@@ -278,6 +278,76 @@ nav {
   }
 }
 
+.main__cart-container {
+  @include flex(column, start, start);
+  width: 100%;
+  border: 1px solid $pale-grey;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+  &__title {
+    display: none;
+  }
+  &__items {
+    @include flex(row, start, start);
+    width: 100%;
+    margin-bottom: 1rem;
+    &__photo-wrapper {
+      width: 100px;
+      height: 100px;
+      border-radius: 4px;
+    }
+    &__product-info-wrapper {
+      @include flex(column, start, end);
+      flex: 1;
+      &--details {
+        @include flex(column, start, end);
+      }
+      &--name {
+        font-weight: 400;
+        line-height: 1.5rem;
+      }
+      &--price {
+        font-weight: 700;
+        line-height: 22px;
+        color: $neutrals-black;
+      }
+      &--modifier {
+        &--qty {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 17px;
+          color: $neutrals-black;
+        }
+      }
+    }
+    &__freight,
+    &__subtotal {
+      @include flex(row, space-between, center);
+      width: 100%;
+      border-top: 1px solid $pale-grey;
+      &--name {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+      }
+      &--total {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 700;
+        color: $neutrals-black;
+      }
+    }
+
+    &__freight {
+      padding: 1rem 0;
+    }
+    &__subtotal {
+      padding-top: 1rem;
+    }
+  }
+}
+
 footer {
   display: none;
 }
@@ -332,6 +402,40 @@ footer {
 
   .main__step-panel {
     height: 24px;
+  }
+
+  .form-part {
+    .form-title {
+      margin-top: 4rem;
+    }
+    .forms.stage-1 {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      column-gap: 30px;
+      grid-template-areas:
+        'title title name name name name'
+        'phone phone phone email email email'
+        'city city address address address address';
+    }
+    .forms.stage-3 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      column-gap: 30px;
+      grid-template-areas:
+        'cardname cardname cardname cardname . .'
+        'cardnumber cardnumber cardnumber cardnumber . .'
+        'validity validity validity cvc cvc cvc';
+    }
+  }
+
+  .main__cart-container {
+    &__title {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 22px;
+    }
   }
 
   footer {
