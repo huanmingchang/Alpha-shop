@@ -373,7 +373,40 @@ nav {
   }
 }
 
-
+.main__button-panel {
+  @include flex(row, space-between, center);
+  margin-top: 2rem;
+  padding: 24px 0 40px;
+  border-top: 1px solid $border-grey;
+  &__btn {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    width: 156px;
+    height: 46px;
+    border-radius: 8px;
+  }
+  .btn-outline {
+    background: transparent;
+    color: $neutrals-black;
+  }
+  .btn-primary {
+    background: $pink;
+    color: $white;
+  }
+  .btn-outline::before {
+    content: '\2190';
+    width: 24px;
+    height: 24px;
+    margin-right: 12.5px;
+  }
+  .btn-primary::after {
+    content: '\2192';
+    width: 24px;
+    height: 24px;
+    margin-left: 13.5px;
+  }
+}
 
 footer {
   display: none;
@@ -453,6 +486,13 @@ footer {
 
   .main__button-panel {
     grid-area: button-panel;
+    padding: 24px 0 0;
+    &__btn {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17px;
+      width: 174px;
+    }
   }
 
   .form-part {
