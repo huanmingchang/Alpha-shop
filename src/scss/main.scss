@@ -163,10 +163,9 @@ nav {
       &--connect-line {
         display: block;
         @extend %position-center;
-        left: 50%;
+        left: 180%;
         width: 60px;
         height: 2px;
-        max-width: 60px;
         background: $pale-grey;
       }
       &--label-container {
@@ -181,6 +180,7 @@ nav {
 
 .form-part {
   width: 100%;
+  height: 100%;
   .form-title {
     margin-top: 1.5rem;
     font-size: 1.5rem;
@@ -188,6 +188,8 @@ nav {
     font-weight: 700;
   }
   .forms {
+    outline: 1px solid red;
+
     .form-row {
       @include flex(column, start, start);
       width: 100%;
@@ -220,6 +222,63 @@ nav {
             color: $placeholder-grey;
           }
         }
+      }
+    }
+    .radio-wrapper {
+      @include flex(row, start, center);
+      border: 1px solid $pale-grey;
+      width: 100%;
+      height: 60px;
+      border-radius: 4px;
+      margin-top: 1rem;
+      input {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid $radio-color;
+        margin: 0, 20px;
+        &:checked {
+          box-shadow: inset 0 0 0 6px $font-color;
+        }
+      }
+      .delivery-content {
+        @include flex(column, center, start);
+        width: 100%;
+        height: 100%;
+        color: $neutrals-black;
+        outline: 1px solid blue;
+        &__details {
+          @include flex(row, space-between, center);
+          width: 100%;
+          &--option {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 20px;
+            color: $neutrals-black;
+            &-dhl {
+              font-size: 0.875rem;
+              font-weight: 700;
+              line-height: 20px;
+              color: $neutrals-black;
+            }
+          }
+          &--freight {
+            font-size: 0.75rem;
+            font-weight: 400;
+            line-height: 16px;
+            color: $neutrals-black;
+          }
+        }
+        &__time {
+          font-size: 0.75rem;
+          font-weight: 400;
+          line-height: 16px;
+          color: $neutrals-black;
+        }
+      }
+      &:hover {
+        border: 1px solid $font-color;
       }
     }
   }
@@ -386,6 +445,10 @@ nav {
     height: 46px;
     border-radius: 8px;
   }
+  .first-step {
+    width: 100%;
+  }
+
   .btn-outline {
     background: transparent;
     color: $neutrals-black;
@@ -471,9 +534,27 @@ footer {
     font-size: 2rem;
   }
 
-  .main__step-panel {
+  .main__stepper-panel {
     grid-area: stepper-panel;
     height: 24px;
+    width: 100%;
+    &__container {
+      &__step {
+        &--circle-container {
+          @include flex(row, center, center);
+          margin-right: 0.5rem;
+          width: 24px;
+          height: 24px;
+        }
+        &--connect-line {
+          left: 50%;
+          right: -50%;
+        }
+        &--label-container {
+          display: block;
+        }
+      }
+    }
   }
 
   .main__form-panel {
@@ -491,6 +572,10 @@ footer {
       font-size: 14px;
       font-weight: 500;
       line-height: 17px;
+      width: 174px;
+    }
+    .first-step {
+      margin-left: auto;
       width: 174px;
     }
   }

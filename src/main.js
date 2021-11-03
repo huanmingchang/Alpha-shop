@@ -2,6 +2,12 @@ import './scss/main.scss'
 
 const hamburger = document.querySelector('.hamburger')
 const cartContainer = document.querySelector('.main__cart')
+const btnPrev = document.querySelector('.btn-outline')
+const btnNext = document.querySelector('.btn-primary')
+const btnPanel = document.querySelector('.main__button-panel')
+const steps = document.querySelectorAll('.main__stepper-panel__container__step')
+const formParts = document.querySelectorAll('.form-part')
+let step = 0
 
 // TODO  visibility 切換問題
 function hamburgerOnClick(e) {
@@ -70,5 +76,52 @@ function calculateTotalAmount() {
     '$' + sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
 }
 
+function handleFormPanel(e) {
+  e.preventDefault()
+  const nowStep = steps[step]
+  if (e.target.matches('.btn-primary') && e.target.innerHTML === '下一步') {
+    const nextStep = steps[step + 1]
+    nowStep.classList.remove('active')
+    nowStep.classList.remove('initial')
+    nowStep.classList.add('checked')
+    nextStep.classList.add('active')
+    formParts[step].classList.toggle('d-none')
+    formParts[step + 1].classList.toggle('d-none')
+    step += 1
+  } else if (e.target.matches('.btn-outline')) {
+    const prevStep = steps[step - 1]
+    if (prevStep === steps[0]) {
+      nowStep.classList.remove('active')
+      prevStep.classList.remove('checked')
+      prevStep.classList.add('initial')
+    } else {
+      nowStep.classList.remove('active')
+      prevStep.classList.remove('checked')
+      prevStep.classList.add('active')
+    }
+    formParts[step].classList.toggle('d-none')
+    formParts[step - 1].classList.toggle('d-none')
+    step -= 1
+  }
+  controlBtn()
+}
+
+function controlBtn() {
+  if (step === 0) {
+    btnPrev.classList.add('d-none')
+    btnNext.classList.add('first-step')
+  } else {
+    btnPrev.classList.remove('d-none')
+    btnNext.classList.remove('first-step')
+  }
+
+  if (step === 2) {
+    btnNext.innerHTML = '確認下單'
+  } else {
+    btnNext.innerHTML = '下一步'
+  }
+}
+
 hamburger.addEventListener('click', hamburgerOnClick)
 cartContainer.addEventListener('click', adjustCartQty)
+btnPanel.addEventListener('click', handleFormPanel)
