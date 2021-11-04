@@ -117,8 +117,10 @@ function controlBtn() {
 
   if (step === 2) {
     btnNext.innerHTML = '確認下單'
+    btnNext.classList.add('last-step')
   } else {
     btnNext.innerHTML = '下一步'
+    btnNext.classList.remove('last-step')
   }
 }
 

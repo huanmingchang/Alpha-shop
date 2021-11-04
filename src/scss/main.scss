@@ -453,6 +453,10 @@ form {
     width: 100%;
   }
 
+  .last-step::after {
+    display: none;
+  }
+
   .btn-outline {
     background: transparent;
     color: $neutrals-black;
@@ -587,7 +591,6 @@ footer {
   .form-part {
     margin-top: 4rem;
     height: 288px;
-    outline: 1px solid red;
     .forms.stage-1 {
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: auto;
