@@ -17,10 +17,10 @@ function hamburgerOnClick(e) {
   }
 
   if (e.target.classList.contains('hamburger')) {
-    if (navWrapper.style.visibility === 'hidden') {
-      navWrapper.style.visibility = 'visible'
+    if (navWrapper.style.display === 'none') {
+      navWrapper.style.display = 'block'
     } else {
-      navWrapper.style.visibility = 'hidden'
+      navWrapper.style.display = 'none'
     }
   }
 }
