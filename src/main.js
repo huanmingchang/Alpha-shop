@@ -7,21 +7,16 @@ const btnNext = document.querySelector('.btn-primary')
 const btnPanel = document.querySelector('.main__button-panel')
 const steps = document.querySelectorAll('.main__stepper-panel__container__step')
 const formParts = document.querySelectorAll('.form-part')
+const navContainer = document.querySelector('.nav-container')
 let step = 0
 
-// TODO  visibility 切換問題
 function hamburgerOnClick(e) {
-  const navWrapper = document.querySelector('.nav-wrapper')
   if (!e.target.classList.contains('hamburger')) {
     return
   }
 
   if (e.target.classList.contains('hamburger')) {
-    if (navWrapper.style.display === 'none') {
-      navWrapper.style.display = 'block'
-    } else {
-      navWrapper.style.display = 'none'
-    }
+    navContainer.classList.toggle('d-none')
   }
 }
 

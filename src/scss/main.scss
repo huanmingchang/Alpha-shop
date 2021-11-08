@@ -53,7 +53,7 @@ nav {
     width: 20px;
   }
   .nav-container {
-    display: none;
+    // display: none;
   }
   .nav-wrapper {
     @include flex(column, start, center);
@@ -80,6 +80,9 @@ nav {
       }
       a:first-child {
         padding-top: 0;
+      }
+      a:hover {
+        text-decoration: underline;
       }
     }
     &__icons-wrapper {
@@ -697,6 +700,9 @@ footer {
           font-weight: 400;
           line-height: 1.2rem;
           color: $footer-grey;
+        }
+        &__content--item:hover {
+          text-decoration: underline;
         }
         &__icons-wrapper {
           @include flex(row, start, center);
