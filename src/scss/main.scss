@@ -52,6 +52,9 @@ nav {
     height: 15px;
     width: 20px;
   }
+  .nav-container {
+    display: none;
+  }
   .nav-wrapper {
     @include flex(column, start, center);
     position: absolute;
@@ -59,7 +62,6 @@ nav {
     width: 100%;
     height: 394px;
     margin-top: 1rem;
-    display: none;
     z-index: 10;
     background: $white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -124,10 +126,10 @@ nav {
   width: 100%;
   height: 32px;
   &__container {
+    position: relative;
     width: 100%;
     height: 100%;
     &__step {
-      position: relative;
       @include flex(row, start, center);
       @include getStepNums(3);
       &.initial,
@@ -174,10 +176,16 @@ nav {
       &--connect-line {
         display: block;
         @extend %position-center;
-        left: 180%;
         width: 60px;
         height: 2px;
         background: $pale-grey;
+      }
+      .first {
+        left: 20%;
+      }
+
+      .second {
+        right: 20%;
       }
       &--label-container {
         display: none;
@@ -494,11 +502,21 @@ footer {
   display: none;
 }
 
-@media (min-width: 376px) {
+@media (min-width: 576px) {
+  .main {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
   nav {
     height: 60px;
     .hamburger {
       display: none;
+    }
+    .nav-container {
+      display: block;
     }
     .nav-wrapper {
       @include flex(row, space-between, center);
@@ -510,14 +528,15 @@ footer {
       margin-top: 0rem;
       z-index: 0;
       background: transparent;
-      padding: 0 11.45%;
+      padding: 0 5%;
       box-shadow: none;
       &__menu {
         @include flex(row, space-between, center);
-        width: 26.6%;
+        width: 15%;
         white-space: nowrap;
         a {
-          margin-right: 10%;
+          font-size: 14px;
+          margin-right: 8%;
           border-bottom: none;
         }
         a:first-child {
@@ -543,19 +562,8 @@ footer {
       height: 30px;
     }
   }
-  .main {
-    margin: 0 165px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-      'main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title'
-      'stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel . cart cart cart cart cart'
-      'form-panel form-panel form-panel form-panel form-panel form-panel . cart cart cart cart cart'
-      'button-panel button-panel button-panel button-panel button-panel button-panel . cart cart cart cart cart';
-  }
+
   .main__title {
-    grid-area: main-title;
     margin: 5rem 0 3rem;
     font-size: 2rem;
   }
@@ -572,9 +580,11 @@ footer {
           width: 24px;
           height: 24px;
         }
-        &--connect-line {
-          left: 50%;
-          right: -50%;
+        .first {
+          left: 23%;
+        }
+        .second {
+          right: 23%;
         }
         &--label-container {
           display: block;
@@ -665,7 +675,7 @@ footer {
     display: flex;
     width: 100%;
     height: 284px;
-    margin-top: 124px;
+    margin-top: 3rem;
     background: $footer;
     .footer-info-wrapper {
       width: 80%;
@@ -679,13 +689,13 @@ footer {
         height: 100%;
         &__title {
           padding: 4rem 0 1.5rem;
-          font-size: 1.5rem;
+          font-size: 1rem;
           font-weight: 700;
         }
         &__content--item {
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 400;
-          line-height: 1.5rem;
+          line-height: 1.2rem;
           color: $footer-grey;
         }
         &__icons-wrapper {
@@ -710,5 +720,71 @@ footer {
         }
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  nav {
+    .nav-wrapper {
+      padding: 0 8%;
+      &__menu {
+        width: 20%;
+      }
+    }
+  }
+  .main {
+    width: 100%;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title main-title'
+      'stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel . cart cart cart cart cart'
+      'form-panel form-panel form-panel form-panel form-panel form-panel . cart cart cart cart cart'
+      'button-panel button-panel button-panel button-panel button-panel button-panel . cart cart cart cart cart';
+  }
+
+  footer {
+    margin-top: 124px;
+    .footer-info-wrapper {
+      .footer-info {
+        &__title {
+          font-size: 1.5rem;
+        }
+        &__content--item {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  nav {
+    .nav-wrapper {
+      padding: 0 11.45%;
+      &__menu {
+        width: 26.6%;
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .main {
+    padding: 0 165px;
+  }
+
+  footer {
+    margin-top: 124px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main {
+    max-width: 1440px;
   }
 }
