@@ -15,14 +15,15 @@
   border-radius: 4px;
   padding: 0.75rem 0 0.75rem 1rem;
   font-size: 0.75rem;
-  color: $font-color;
-  border: 1px solid $input-border-grey;
+  color: var(--font-color);
+  border: 1px solid var(--input-border-grey);
+  background: var(--white)
   &:placeholder {
-    color: $placeholder-grey;
+    color: var(--placeholder-grey);
   }
   &:hover,
   &:focus {
-    border-color: $neutrals-grey;
+    border-color: var(--neutrals-grey);
   }
 }
 
@@ -42,6 +43,11 @@
   }
 }
 
+body {
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
 nav {
   position: relative;
   width: 100%;
@@ -52,9 +58,7 @@ nav {
     height: 15px;
     width: 20px;
   }
-  .nav-container {
-    // display: none;
-  }
+
   .nav-wrapper {
     @include flex(column, start, center);
     position: absolute;
@@ -63,7 +67,7 @@ nav {
     height: 394px;
     margin-top: 1rem;
     z-index: 10;
-    background: $white;
+    background: var(--white);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     &__menu {
       @include flex(column, start, center);
@@ -72,7 +76,7 @@ nav {
         @include flex(row, center, center);
         padding: 1.5rem 0;
         width: 92%;
-        color: $font-color;
+        color: var(--font-color);
         font-size: 1rem;
         font-weight: 500;
         line-height: 24px;
@@ -139,26 +143,26 @@ nav {
       &.checked,
       &.active {
         .main__stepper-panel__container__step--connect-line {
-          background: $neutrals-black;
+          background: var(--neutrals-black);
         }
 
         .main__stepper-panel__container__step--label-container {
-          color: $font-color;
+          color: var(--font-color);
         }
       }
       &.initial,
       &.checked {
         .main__stepper-panel__container__step--circle-container {
-          background: $black;
-          border-color: $black;
-          color: $white;
+          background: var(--black);
+          border-color: var(--black);
+          color: var(--white);
         }
       }
       &.active {
         .main__stepper-panel__container__step--circle-container {
           background: transparent;
-          border-color: $font-color;
-          color: $font-color;
+          border-color: var(--font-color);
+          color: var(--font-color);
         }
       }
       &.checked {
@@ -173,15 +177,15 @@ nav {
         height: 32px;
         border-radius: 50%;
         background: transparent;
-        color: $neutrals-grey;
-        border: 1px solid $neutrals-grey;
+        color: var(--neutrals-grey);
+        border: 1px solid var(--neutrals-grey);
       }
       &--connect-line {
         display: block;
         @extend %position-center;
         width: 60px;
         height: 2px;
-        background: $pale-grey;
+        background: var(--pale-grey);
       }
       .first {
         left: 20%;
@@ -194,7 +198,7 @@ nav {
         display: none;
         line-height: 1.5rem;
         font-weight: 400;
-        color: $neutrals-grey;
+        color: var(--neutrals-grey);
       }
     }
   }
@@ -221,7 +225,7 @@ form {
       label {
         font-size: 0.75rem;
         line-height: 1rem;
-        color: $footer-grey;
+        color: var(--footer-grey);
         padding: 1.5rem 0 0.5rem 0;
       }
       input {
@@ -236,7 +240,7 @@ form {
           @extend %position-center;
           right: 8px;
           z-index: -1;
-          color: $font-color;
+          color: var(--font-color);
         }
         select {
           @extend %input-common-style;
@@ -244,14 +248,14 @@ form {
           background: transparent;
           cursor: pointer;
           &:invalid {
-            color: $placeholder-grey;
+            color: var(--placeholder-grey);
           }
         }
       }
     }
     .radio-wrapper {
       @include flex(row, start, center);
-      border: 1px solid $pale-grey;
+      border: 1px solid var(--pale-grey);
       width: 100%;
       height: 60px;
       border-radius: 4px;
@@ -262,10 +266,12 @@ form {
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        border: 1px solid $radio-color;
+        border: 1px solid var(--radio-color);
+        background: var(--radio-background);
 
         &:checked {
-          box-shadow: inset 0 0 0 6px $font-color;
+          box-shadow: inset 0 0 0 5px var(--radio-check);
+          background: var(--radio-check-background);
         }
       }
       .delivery-content {
@@ -273,7 +279,7 @@ form {
         flex: 1;
         height: 100%;
         margin-left: 20px;
-        color: $neutrals-black;
+        color: var(--neutrals-black);
         &__details {
           @include flex(row, space-between, center);
           width: 100%;
@@ -281,30 +287,30 @@ form {
             font-size: 0.875rem;
             font-weight: 400;
             line-height: 20px;
-            color: $neutrals-black;
+            color: var(--neutrals-black);
             &-dhl {
               font-size: 0.875rem;
               font-weight: 700;
               line-height: 20px;
-              color: $neutrals-black;
+              color: var(--neutrals-black);
             }
           }
           &--freight {
             font-size: 0.75rem;
             font-weight: 400;
             line-height: 16px;
-            color: $neutrals-black;
+            color: var(--neutrals-black);
           }
         }
         &__time {
           font-size: 0.75rem;
           font-weight: 400;
           line-height: 16px;
-          color: $neutrals-black;
+          color: var(--delivery-time);
         }
       }
       &:hover {
-        border: 1px solid $font-color;
+        border: 1px solid var(--font-color);
       }
     }
   }
@@ -366,10 +372,11 @@ form {
 .main__cart-container {
   @include flex(column, start, start);
   width: 100%;
-  border: 1px solid $pale-grey;
+  border: 1px solid var(--pale-grey);
   border-radius: 8px;
   padding: 1rem;
   margin-top: 2rem;
+  background: var(--cart-container);
   &__title {
     display: none;
   }
@@ -402,7 +409,7 @@ form {
           font-size: 14px;
           font-weight: 500;
           line-height: 17px;
-          color: $neutrals-black;
+          color: var(--neutrals-black);
         }
         .btn.btn-plus,
         .btn.btn-minus {
@@ -410,32 +417,32 @@ form {
           width: 26px;
           height: 27px;
           border-radius: 50%;
-          background: $pale-grey;
+          background: var(--pale-grey);
         }
         .btn-plus::after {
           content: '\002B';
           width: 10.84px;
           height: 11.25px;
-          color: $neutrals-black;
+          color: var(--neutrals-black);
         }
         .btn-minus::after {
           content: '\2212';
           width: 10.84px;
           height: 11.25px;
-          color: $neutrals-black;
+          color: var(--neutrals-black);
         }
       }
       &--price {
         font-weight: 700;
         line-height: 22px;
-        color: $neutrals-black;
+        color: var(--neutrals-black);
       }
     }
     &__freight,
     &__subtotal {
       @include flex(row, space-between, center);
       width: 100%;
-      border-top: 1px solid $pale-grey;
+      border-top: 1px solid var(--pale-grey);
       &--name {
         font-size: 14px;
         line-height: 20px;
@@ -445,7 +452,7 @@ form {
         font-size: 14px;
         line-height: 17px;
         font-weight: 700;
-        color: $neutrals-black;
+        color: var(--neutrals-black);
       }
     }
 
@@ -462,7 +469,7 @@ form {
   @include flex(row, space-between, center);
   margin-top: 2rem;
   padding: 24px 0 40px;
-  border-top: 1px solid $border-grey;
+  border-top: 1px solid var(--border-grey);
   &__btn {
     font-size: 14px;
     font-weight: 500;
@@ -481,11 +488,11 @@ form {
 
   .btn-outline {
     background: transparent;
-    color: $neutrals-black;
+    color: var(--neutrals-black);
   }
   .btn-primary {
-    background: $pink;
-    color: $white;
+    background: var(--pink);
+    color: var(--white);
   }
   .btn-outline::before {
     content: '\2190';
@@ -679,7 +686,7 @@ footer {
     width: 100%;
     height: 284px;
     margin-top: 3rem;
-    background: $footer;
+    background: var(--footer);
     .footer-info-wrapper {
       width: 80%;
       height: 100%;
@@ -699,7 +706,7 @@ footer {
           font-size: 0.8rem;
           font-weight: 400;
           line-height: 1.2rem;
-          color: $footer-grey;
+          color: var(--footer-grey);
         }
         &__content--item:hover {
           text-decoration: underline;

@@ -1,32 +1,43 @@
-$bg-color: #ffffff;
-$white: #ffffff;
-$font-color: #2a2a2a;
-$black: #333333;
-$neutrals-grey: #afb1bd;
-$neutrals-black: #000000;
-$pale-grey: #f0f0f5;
-$border-grey: #e6e6eb;
-$pink: #f67599;
-$footer: #e5e5e5;
-$footer-grey: #808080;
-$input-border-grey: #4a4a4a;
-$placeholder-grey: #999999;
-$radio-color: #222222;
+:root {
+  --bg-color: #ffffff;
+  --white: #ffffff;
+  --font-color: #2a2a2a;
+  --black: #333333;
+  --neutrals-grey: #afb1bd;
+  --neutrals-black: #000000;
+  --pale-grey: #f0f0f5;
+  --border-grey: #e6e6eb;
+  --pink: #f67599;
+  --footer: #e5e5e5;
+  --footer-grey: #808080;
+  --input-border-grey: #4a4a4a;
+  --placeholder-grey: #999999;
+  --radio-color: #222222;
+  --cart-container: #ffffff;
+  --delivery-time: rgba(0, 0, 0);
+  --radio-background: #ffffff;
+  --radio-check: #2a2a2a;
+  --radio-check-background: #ffffff
+}
 
-/* dark mode 
-$bg-color: #121212;
-$white: #ffffff;
-$font-color: #ffffff;
-$black: #333333;
-$neutrals-grey: #AFB1BD;
-$neutrals-black: #ffffff;
-$pale-grey: #5e5e5e;
-$border-grey:rgba(255, 255, 255, 0.2);
-$pink: #f67599;
-$footer: #333333;
-$footer-grey: #808080;
-$input-border-grey: #5e5e5e;
-$placeholder-grey: #999999;
-$radio-color: #333333;
-
-*/
+.dark-theme {
+  --bg-color: #121212;
+  --white: #ffffff;
+  --font-color: #ffffff;
+  --black: #333333;
+  --neutrals-grey: #afb1bd;
+  --neutrals-black: #ffffff;
+  --pale-grey: #5e5e5e;
+  --border-grey: rgba(255, 255, 255, 0.2);
+  --pink: #f67599;
+  --footer: #333333;
+  --footer-grey: #808080;
+  --input-border-grey: #5e5e5e;
+  --placeholder-grey: #999999;
+  --radio-color: #333333;
+  --cart-container: #383838;
+  --delivery-time: rgba(255, 255, 255, 0.4);
+  --radio-background: #333333;
+  --radio-check: #333333;
+  --radio-check-background: #ffffff;
+}

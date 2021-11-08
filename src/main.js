@@ -8,6 +8,9 @@ const btnPanel = document.querySelector('.main__button-panel')
 const steps = document.querySelectorAll('.main__stepper-panel__container__step')
 const formParts = document.querySelectorAll('.form-part')
 const navContainer = document.querySelector('.nav-container')
+const modeSwitchBtn = document.querySelector(
+  '.nav-wrapper__icons-wrapper--switch'
+)
 let step = 0
 
 function hamburgerOnClick(e) {
@@ -119,6 +122,32 @@ function controlBtn() {
   }
 }
 
+function switchMode() {
+  const body = document.querySelector('#body')
+  const navLogo = document.querySelector('.nav__logo__pic')
+  const footerLogo = document.querySelector('.footer__logo__pic')
+  const search = document.querySelector('.nav-wrapper__icons-wrapper--search')
+  const cart = document.querySelector('.nav-wrapper__icons-wrapper--cart')
+  const modeToggle = document.querySelector(
+    '.nav-wrapper__icons-wrapper--switch'
+  )
+  document.body.classList.toggle('dark-theme')
+  if (body.classList.contains('dark-theme')) {
+    navLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
+    footerLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
+    search.src = 'http://127.0.0.1:5500/public/search-nightmode@2x.png'
+    cart.src = 'http://127.0.0.1:5500/public/shopping-cart-nightmode@2x.png'
+    modeToggle.src = 'http://127.0.0.1:5500/public/sun-icon@2x.png'
+  } else {
+    navLogo.src = 'http://127.0.0.1:5500/public/logo-daymode@2x%20(1).png'
+    footerLogo.src = 'http://127.0.0.1:5500/public/logo-daymode@2x%20(1).png'
+    search.src = 'http://127.0.0.1:5500/public/search-daymode.png'
+    cart.src = 'http://127.0.0.1:5500/public/shopping-cart-daymode@2x.png'
+    modeToggle.src = 'http://127.0.0.1:5500/public/moon-icon@2x.png'
+  }
+}
+
 hamburger.addEventListener('click', hamburgerOnClick)
 cartContainer.addEventListener('click', adjustCartQty)
 btnPanel.addEventListener('click', handleFormPanel)
+modeSwitchBtn.addEventListener('click', switchMode)
