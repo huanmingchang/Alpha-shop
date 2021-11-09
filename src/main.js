@@ -133,7 +133,7 @@ function switchMode() {
   )
   document.body.classList.toggle('dark-theme')
   if (body.classList.contains('dark-theme')) {
-    navLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
+    http: navLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
     footerLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
     search.src = 'http://127.0.0.1:5500/public/search-nightmode@2x.png'
     cart.src = 'http://127.0.0.1:5500/public/shopping-cart-nightmode@2x.png'
