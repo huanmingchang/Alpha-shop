@@ -11,6 +11,7 @@ const navContainer = document.querySelector('.nav-container')
 const modeSwitchBtn = document.querySelector(
   '.nav-wrapper__icons-wrapper--switch'
 )
+const radioContainer = document.querySelector('.stage-2')
 let step = 0
 
 function hamburgerOnClick(e) {
@@ -133,17 +134,47 @@ function switchMode() {
   )
   document.body.classList.toggle('dark-theme')
   if (body.classList.contains('dark-theme')) {
-    http: navLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
-    footerLogo.src = 'http://127.0.0.1:5500/public/logo-nightmode@2x.png'
-    search.src = 'http://127.0.0.1:5500/public/search-nightmode@2x.png'
-    cart.src = 'http://127.0.0.1:5500/public/shopping-cart-nightmode@2x.png'
-    modeToggle.src = 'http://127.0.0.1:5500/public/sun-icon@2x.png'
+    navLogo.src = '/public/logo-nightmode@2x.png'
+    footerLogo.src = '/public/logo-nightmode@2x.png'
+    search.src = '/public/search-nightmode@2x.png'
+    cart.src = '/public/shopping-cart-nightmode@2x.png'
+    modeToggle.src = '/public/sun-icon@2x.png'
+    hamburger.src = '/public/hamburger-nightmode@2x.png'
   } else {
-    navLogo.src = 'http://127.0.0.1:5500/public/logo-daymode@2x%20(1).png'
-    footerLogo.src = 'http://127.0.0.1:5500/public/logo-daymode@2x%20(1).png'
-    search.src = 'http://127.0.0.1:5500/public/search-daymode.png'
-    cart.src = 'http://127.0.0.1:5500/public/shopping-cart-daymode@2x.png'
-    modeToggle.src = 'http://127.0.0.1:5500/public/moon-icon@2x.png'
+    navLogo.src = '/public/logo-daymode@2x%20(1).png'
+    footerLogo.src = '/public/logo-daymode@2x%20(1).png'
+    search.src = '/public/search-daymode.png'
+    cart.src = '/public/shopping-cart-daymode@2x.png'
+    modeToggle.src = '/public/moon-icon@2x.png'
+    hamburger.src = '/public/hamburger@2x.png'
+  }
+}
+
+function handleDhlFreight(e) {
+  const freight = document.querySelector(
+    '.main__cart-container__items__freight--total'
+  )
+  if (e.target.classList.contains('dhl')) {
+    freight.innerText = '500'
+  }
+  if (e.target.classList.contains('standard')) {
+    freight.innerText = '免費'
+  }
+  calculateTotalAmount()
+}
+
+function handleRadioBorder(e) {
+  const standardRadioWrapper = document.querySelector(
+    '#standard-delivery-wrapper'
+  )
+  const dhlRadioWrapper = document.querySelector('#dhl-delivery-wrapper')
+  if (e.target.classList.contains('dhl')) {
+    standardRadioWrapper.classList.remove('checked')
+    dhlRadioWrapper.classList.add('checked')
+  }
+  if (e.target.classList.contains('standard')) {
+    standardRadioWrapper.classList.add('checked')
+    dhlRadioWrapper.classList.remove('checked')
   }
 }
 
@@ -151,3 +182,5 @@ hamburger.addEventListener('click', hamburgerOnClick)
 cartContainer.addEventListener('click', adjustCartQty)
 btnPanel.addEventListener('click', handleFormPanel)
 modeSwitchBtn.addEventListener('click', switchMode)
+radioContainer.addEventListener('click', handleDhlFreight)
+radioContainer.addEventListener('click', handleRadioBorder)

@@ -9,7 +9,7 @@
   <body class="" id="body">
     <!-- navbar -->
     <nav id="navbar">
-      <img src="./public/hamburger@2x.png" alt="" class="hamburger" />
+      <img src="/public/hamburger@2x.png" alt="" class="hamburger" />
       <div class="nav-container d-none">
         <div class="nav-wrapper">
           <div class="nav-wrapper__menu">
@@ -22,19 +22,19 @@
           <div class="nav-wrapper__icons-wrapper">
           <a href="#"
             ><img
-              src="http://127.0.0.1:5500/public/search-daymode.png"
+              src="/public/search-daymode.png"
               alt="search"
               class="nav-wrapper__icons-wrapper--search"
           /></a>
           <a href="#"
             ><img
-              src="http://127.0.0.1:5500/public/shopping-cart-daymode@2x.png"
+              src="/public/shopping-cart-daymode@2x.png"
               alt="cart"
               class="nav-wrapper__icons-wrapper--cart"
           /></a>
           <a href="#"
             ><img
-              src="http://127.0.0.1:5500/public/moon-icon@2x.png"
+              src="/public/moon-icon@2x.png"
               alt="switch mode"
               class="nav-wrapper__icons-wrapper--switch"
           /></a>
@@ -44,7 +44,7 @@
       <div class="nav__logo">
         <a href="#"
           ><img
-            src="http://127.0.0.1:5500/public/logo-daymode@2x%20(1).png"
+            src="/public/logo-daymode@2x (1).png"
             class="nav__logo__pic"
             alt="logo"
         /></a>
@@ -160,14 +160,15 @@
             <div class="form-part d-none">
               <div class="form-title">運送方式</div>
               <div class="forms stage-2">
-                <div class="radio-wrapper">
+                <div class="radio-wrapper standard checked" id="standard-delivery-wrapper">
                   <input
                     type="radio"
                     name="delivery"
                     value="general"
-                    class="delivery"
+                    class="standard delivery checked"
+                    id="standard-delivery" checked
                   />
-                  <div class="delivery-content">
+                  <label for="standard-delivery" class="standard delivery-content">
                     <div
                       class="
                         delivery-content__details
@@ -179,16 +180,17 @@
                       <div class="delivery-content__details--freight">免費</div>
                     </div>
                     <div class="delivery-content__time">約 3~7 個工作天</div>
-                  </div>
+                  </label>
                 </div>
-                <div class="radio-wrapper">
+                <div class="radio-wrapper dhl" id="dhl-delivery-wrapper">
                   <input
                     type="radio"
                     name="delivery"
                     value="dhl"
-                    class="delivery"
+                    class="dhl delivery"
+                    id="dhl-delivery"
                   />
-                  <div class="delivery-content">
+                  <label for="dhl-delivery" id="dhl-delivery" class="dhl delivery-content">
                     <div
                       class="
                         delivery-content__details
@@ -200,7 +202,7 @@
                       <div class="delivery-content__details--freight">$500</div>
                     </div>
                     <div class="delivery-content__time">48 小時內送達</div>
-                  </div>
+                  </label>
                 </div>
               </div>
             </div>
@@ -246,7 +248,7 @@
           <div class="main__cart-container__items">
             <div class="main__cart-container__items__photo-wrapper">
               <img
-                src="./public/product-1@2x.png"
+                src="/public/product-1@2x.png"
                 class="product-photo"
                 alt="product-photo"
               />
@@ -290,7 +292,7 @@
           <div class="main__cart-container__items">
             <div class="main__cart-container__items__photo-wrapper">
               <img
-                src="./public/product-2@2x.png"
+                src="/public/product-2@2x.png"
                 class="product-photo"
                 alt="product-photo"
               />
@@ -373,7 +375,7 @@
         >
           <a href="javascript:void(0);">
             <img
-              src="http://127.0.0.1:5500/public/logo-daymode@2x%20(1).png"
+              src="/public/logo-daymode@2x (1).png"
               class="footer__logo__pic"
               alt="logo"
           /></a>
@@ -430,19 +432,19 @@
             <div class="footer-info__icons-wrapper d-flex">
               <a href="javascript:void(0);"
                 ><img
-                  src="./public/fb-daymode@2x.png"
+                  src="/public/fb-daymode@2x.png"
                   alt=""
                   class="footer-info__icons-wrapper--fb"
               /></a>
               <a href="javascript:void(0);"
                 ><img
-                  src="./public/ig-daymode@2x.png"
+                  src="/public/ig-daymode@2x.png"
                   alt=""
                   class="footer-info__icons-wrapper--ig"
               /></a>
               <a href="javascript:void(0);"
                 ><img
-                  src="./public/whatsapp-daymode@2x.png"
+                  src="/public/whatsapp-daymode@2x.png"
                   alt=""
                   class="footer-info__icons-wrapper--whatsapp"
               /></a>
