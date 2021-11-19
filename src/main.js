@@ -134,19 +134,19 @@ function switchMode() {
   )
   document.body.classList.toggle('dark-theme')
   if (body.classList.contains('dark-theme')) {
-    navLogo.src = '/public/logo-nightmode@2x.png'
-    footerLogo.src = '/public/logo-nightmode@2x.png'
-    search.src = '/public/search-nightmode@2x.png'
-    cart.src = '/public/shopping-cart-nightmode@2x.png'
-    modeToggle.src = '/public/sun-icon@2x.png'
-    hamburger.src = '/public/hamburger-nightmode@2x.png'
+    navLogo.src = './public/logo-nightmode@2x.png'
+    footerLogo.src = './public/logo-nightmode@2x.png'
+    search.src = './public/search-nightmode@2x.png'
+    cart.src = './public/shopping-cart-nightmode@2x.png'
+    modeToggle.src = './public/sun-icon@2x.png'
+    hamburger.src = './public/hamburger-nightmode@2x.png'
   } else {
-    navLogo.src = '/public/logo-daymode@2x%20(1).png'
-    footerLogo.src = '/public/logo-daymode@2x%20(1).png'
-    search.src = '/public/search-daymode.png'
-    cart.src = '/public/shopping-cart-daymode@2x.png'
-    modeToggle.src = '/public/moon-icon@2x.png'
-    hamburger.src = '/public/hamburger@2x.png'
+    navLogo.src = './public/logo-daymode@2x%20(1).png'
+    footerLogo.src = './public/logo-daymode@2x%20(1).png'
+    search.src = './public/search-daymode.png'
+    cart.src = './public/shopping-cart-daymode@2x.png'
+    modeToggle.src = './public/moon-icon@2x.png'
+    hamburger.src = './public/hamburger@2x.png'
   }
 }
 
